@@ -1,0 +1,15 @@
+{
+  "name": "srv_express_test",
+  "version": "1.0.0",
+  "description": "First srv test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rom",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
+  }
+}
