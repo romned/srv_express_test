@@ -1,4 +1,5 @@
 var express = require('express'),
+    bodyParser = require('body-parser'),
     app = express(),
     server;
 
@@ -30,13 +31,26 @@ app.use(function(req, res, next){
     next();
 });
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({extendet: true}));
 
-app.get('/new', function(req, res){
+app.route('/new')
+    .get(function(req, res){
     res.render('new', {
         page: 'Add New',
         links: storeKeys
     });
-});
+})
+    .post(function(req, res){
+        var data = req.body;
+        if(data.pageurl && data.pagename && data.pagecontent) {
+            store[data.pageurl] = {
+                page: data.pagename,
+                content: data.pagecontent
+            };
+            storeKeys = Object.keys(store);
+        }
+        res.redirect('/');
+    });
 
 app.get('/about', function(req, res){
     res.render('about', {
