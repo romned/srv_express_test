@@ -6,14 +6,14 @@ head
     style
         | ul.nav a {
         |   text-transform: capitalize;
-        |}
+        | }
 body
     .container
-      h1= page
+        h1= page
         hr
         ul.nav.nav-pills
-          each link in links
-            li: a(href=link)= link
-           li: a(href='/new') new
+            each link in links
+                li: a(href=link)= link
+            li: a(href='/new') new
         hr
         block content
