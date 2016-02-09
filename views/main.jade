@@ -7,17 +7,30 @@ block content
         var name = "Rom" // Имя
         document.write("Hello," + " ", name);
 
-        var lines = 5;
+        var lines = 5; //Цикл while
         var line = "";
-        var  symbol = "*";
-        var  cnt = 1;
-        while (cnt <= lines){
+        var symbol = "*";
+        var cnt = 1;
+        while (cnt <= lines) {
             line += symbol;
             console.log(line);
             cnt++;
         }
 
-        for (var i = 0; i < 10; i++) {
-            console.log(i);
-        }
+        var x = 1, y;
+        if (x == 1)
+            y = "One";
+        else
+            y = "zero";
+        y = (x == 1) ? "One" : "Zero"; //Образец сокращения кода
 
+        for (var i = 0; i < 10; i++) { // Цикл for
+            if (i == 0)
+                document.write(i + " - zero");
+            else if (i % 2 == 0)
+                document.write(i + " - even");
+            else
+                document.write(i + " - odd");
+
+
+        }
