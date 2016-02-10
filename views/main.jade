@@ -34,3 +34,14 @@ block content
 
 
         }
+        var age = 52;  //Lab if
+        var output = "";
+        if (age >= 18 && age < 60)
+            output = "Вам ещё работать";
+        else if (age > 59)
+            output = "Вам пора на пенсию";
+        else if (age >= 1 && age <= 17)
+            output = "Вам в школу";
+        else
+            output = "Неизвесьный возоаст";
+        document.write(output);
