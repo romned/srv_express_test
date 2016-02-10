@@ -35,7 +35,7 @@ block content
 
 
         }
-        var age = 17;  //Lab if
+        var age = 17;  //Lab if "Do while"
         var output = "";
         if (age >= 18 && age < 60) {
             output = "Вам ещё работать";
@@ -55,7 +55,23 @@ block content
 
         for (var i = 322; i < 356; i++) {
             if (i % 3 != 0)
-            continue; // Окончание цикла
-                document.write(i, '<br>'); //Цикл "сортировки" данных.
-             break; //Завершение и выход из цикла
+                continue; // Окончание цикла
+            document.write(i, '<br>'); //Цикл "сортировки" данных.
+            break; //Завершение и выход из цикла
         }
+
+        var num = 2;
+        var str = "На ветке сидит " + num + " ворон";
+        var x = "";
+        if (num % 100 < 11 || num % 100 > 14) {
+            switch (num % 10) {
+                case 1:
+                    x = "а";
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    x = "ы";
+            }
+        }
+        document.write(str + x, "<br>");
