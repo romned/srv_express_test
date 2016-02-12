@@ -6,24 +6,25 @@ var express = require('express'),
 var store = {
     home: {
         page: 'Практические уроки JS',
-        content: 'example:'
+        content: 'примеры:'
+    },
+
+    lesson: {
+        page: 'Lab работа',
+        content: 'Function'
     }
-    /*   about: {
-     page: 'Tutorial 1',
-     content: 'Хороший день!'
-     },
+    /*
      day2: {
-     page: 'Tutorial 2',
+     page: 'Lesson 2',
      content: 'Новые пробы'
      },
      daynext: {
-     page: 'Tutorial 3',
+     page: 'Lesson 3',
      content: 'Продолжение работ'
      }
      */
-}
-
-storeKeys = Object.keys(store);
+};
+var storeKeys = Object.keys(store);
 
 app.set('view engine', 'jade');
 
@@ -31,6 +32,7 @@ app.use(function (req, res, next) {
     console.log('%s %s', req.method, req.url);
     next();
 });
+
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extendet: true}));
 
@@ -53,8 +55,9 @@ app.route('/new')
         res.redirect('/');
     });
 
-app.get('/about', function (req, res) {
-    res.render('about', {
+app.get('/lesson', function (req, res) {
+    res.render('lesson', {
+        page: 'Lab function',
         links: storeKeys
     });
 });
@@ -64,7 +67,7 @@ app.get('/:page?', function (req, res) {
     if (!page) page = 'home';
     data = store[page];
     if (!data) return res.redirect('/');
-    data.links = storeKeys
+    data.links = storeKeys;
     res.render("main", data);
 });
 

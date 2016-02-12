@@ -33,8 +33,8 @@ block content
             else
                 document.write(i + " - odd<br>");
 
-
         }
+
         var age = 17;  //Lab if "Do while"
         var output = "";
         if (age >= 18 && age < 60) {
@@ -59,8 +59,7 @@ block content
             document.write(i, '<br>'); //Цикл "сортировки" данных.
             break; //Завершение и выход из цикла
         }
-
-        var num = 2;
+        var num = 52;
         var str = "На ветке сидит " + num + " ворон";
         var x = "";
         if (num % 100 < 11 || num % 100 > 14) {
@@ -75,3 +74,13 @@ block content
             }
         }
         document.write(str + x, "<br>");
+
+        function sayHello(name, sign) {
+            name = name || "Guest", "<br>";
+            sign = sign || "...", "<br>";
+            document.write("Hello, " + name + sign, "<br>");
+        }
+        sayHello("Rom", "!");
+        var n = "Inna";
+        sayHello(n);
+        sayHello();
